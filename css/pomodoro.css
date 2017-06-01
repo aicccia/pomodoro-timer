@@ -1,0 +1,71 @@
+html, body {
+  font-size: 16px;
+  background-color: cornsilk; }
+
+.font, main {
+  color: brown;
+  font-family: "Times New Roman";
+  text-align: center; }
+
+main {
+  margin: 10% auto 0 auto;
+  padding: 20px;
+  width: 60%;
+  height: 50%; }
+  main .title {
+    font-size: 2rem; }
+
+.lengthContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.length {
+  width: 50%;
+  height: 20%;
+  margin: 30px 0;
+  font-size: 1.5rem; }
+  .length .timeContainer {
+    margin: 20px 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .length .timeContainer .time {
+      width: 20%;
+      font-weight: 600; }
+
+.sessionContainer {
+  border: 7px solid dimgrey;
+  border-radius: 15%;
+  width: 20%;
+  height: 30%;
+  margin: 20px auto;
+  padding: 15px;
+  font-size: 1.5rem; }
+  .sessionContainer .sessionTitle {
+    margin: 10px 0; }
+  .sessionContainer .sessionTime {
+    font-weight: 600;
+    font-size: 3rem;
+    margin: 10px 0; }
+
+.controlsContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .controlsContainer .controls {
+    width: 20%;
+    margin: 20px 0;
+    font-size: 3rem; }
