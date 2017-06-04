@@ -15,32 +15,42 @@
             <div class="length">
                 <h1>Break Length</h1>
                 <div class="timeContainer">
-                    <div class="time"><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
-                    <div class="time">5</div>
-                    <div class="time"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                    <div class="time"><i class="fa fa-arrow-down" aria-hidden="true" id="breakDownArrow"></i></div>
+                    <div class="time" id="breakTime">5</div><div class="time">:00</div>
+                    <div class="time"><i class="fa fa-arrow-up" aria-hidden="true" id="breakUpArrow"></i></div>
                 </div>
             </div>
             <div class="length">
                 <div>Session Length</div>
                 <div class="timeContainer">
-                    <div class="time"><i class="fa fa-arrow-down" aria-hidden="true"></i></div>
-                    <div class="time">25</div>
-                    <div class="time"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+                    <div class="time"><i class="fa fa-arrow-down" aria-hidden="true" id="sessionDownArrow"></i></div>
+                    <div class="time" id="sessionTime">25</div><div class="time">:00</div>
+                    <div class="time"><i class="fa fa-arrow-up" aria-hidden="true" id="sessionUpArrow"></i></div>
                 </div>
             </div>
         </div>
         <div class="sessionContainer">
             <div class="sessionTitle">Session</div>
-            <div class="sessionTime">25:00</div>
+            <div class="sessionTime">
+                <div id="minutesSession">25</div>
+                <div>:</div>
+                <div id="secondsSession">00</div>
+            </div>
+            <div class="sessionTitle">Break</div>
+            <div class="sessionTime">
+                <div id="minutesBreak">5</div>
+                <div>:</div>
+                <div id="secondsBreak">00</div>
+            </div>
         </div>
         <div class="controlsContainer">
-            <div class="controls"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
-            <div class="controls"><i class="fa fa-pause-circle-o" aria-hidden="true"></i></div>
-            <div class="controls"><i class="fa fa-refresh" aria-hidden="true"></i></div>
+            <div class="controls" id="play"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+            <div class="controls" id="pause"><i class="fa fa-pause-circle-o" aria-hidden="true"></i></div>
+            <div class="controls" id="refresh"><i class="fa fa-refresh" aria-hidden="true"></i></div>
         </div>
     </main>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="pomodoro.js"></script>
+<script src="js/pomodoro.js"></script>
 </html>

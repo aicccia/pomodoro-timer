@@ -44,7 +44,8 @@ main {
 .sessionContainer {
   border: 7px solid dimgrey;
   border-radius: 15%;
-  width: 20%;
+  width: 25%;
+  min-width: 150px;
   height: 30%;
   margin: 20px auto;
   padding: 15px;
@@ -53,9 +54,12 @@ main {
     margin: 10px 0;
   }
   .sessionTime {
+    width: 100%;
     font-weight: 600;
     font-size: 3rem;
     margin: 10px 0;
+    display: flex;
+    justify-content: center;
   }
 }
 
