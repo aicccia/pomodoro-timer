@@ -35,10 +35,14 @@ main {
     display: flex;
     justify-content: center;
     .time {
-      width: 20%;
+      width: 15%;
       font-weight: 600;
     }
   }
+}
+
+.flat {
+  display: inline-block;
 }
 
 .sessionContainer {

@@ -3,7 +3,8 @@
  */
 
 //event handlers for changing the Break Time
-var decreaseTimeInterval;
+var decreaseSessionTimeInterval;
+var decreaseBreakTimeInterval;
 
 $('#breakDownArrow').click(function() {
     var time = $('#breakTime').text();
@@ -30,40 +31,71 @@ $('#sessionUpArrow').click(function() {
     $('#minutesSession').text(Number(time) + 1);
 });
 
+
 $('#play').click(function() {
-    decreaseTimeInterval = window.setInterval(decreaseTime, 1000);
+    decreaseSessionTimeInterval = window.setInterval(decreaseSessionTime, 1000);
 });
 
 $('#pause').click(function() {
-    clearInterval(decreaseTimeInterval);
+    clearInterval(decreaseSessionTimeInterval);
 });
 
 $('#refresh').click(function() {
-    clearInterval(decreaseTimeInterval);
+    clearInterval(decreaseSessionTimeInterval);
     var time = $('#sessionTime').text();
-    $('#minutes').text(time);
-    $('#seconds').text("00");
+    $('#minutesSession').text(time);
+    $('#secondsSession').text("00");
 });
 
-function decreaseTime(secondsLeft, minutesLeft) {
-    var minutesLeft = $('#minutes').text();
-    var secondsLeft = $('#seconds').text();
+function decreaseSessionTime() {
+    var minutesLeft = $('#minutesSession').text();
+    var secondsLeft = $('#secondsSession').text();
 
     if (Number(secondsLeft >= 11)) {
-        $('#seconds').text(Number(secondsLeft) - 1);
+        $('#secondsSession').text(Number(secondsLeft) - 1);
     }
 
     if (Number(secondsLeft > 0) && Number(secondsLeft < 11)) {
-        $('#seconds').text("0" + String(Number(secondsLeft) - 1));
+        $('#secondsSession').text("0" + String(Number(secondsLeft) - 1));
     }
 
     if((Number(minutesLeft) > 0) && (Number(secondsLeft) === 0)) {
-        $('#minutes').text(Number(minutesLeft) - 1);
-        $('#seconds').text(59);
+        $('#minutesSession').text(Number(minutesLeft) - 1);
+        $('#secondsSession').text(59);
     }
 
     if((Number(minutesLeft) === 0) && (Number(secondsLeft) === 0)) {
-        clearInterval(decreaseTimeInterval);
+        var time = $('#sessionTime').text();
+        $('#minutesSession').text(Number(time));
+        $('#secondsSession').text("00");
+        clearInterval(decreaseSessionTimeInterval);
+        decreaseBreakTimeInterval = window.setInterval(decreaseBreakTime, 1000);
+    }
+}
+
+function decreaseBreakTime() {
+    var minutesLeft = $('#minutesBreak').text();
+    var secondsLeft = $('#secondsBreak').text();
+
+    if (Number(secondsLeft >= 11)) {
+        $('#secondsBreak').text(Number(secondsLeft) - 1);
+    }
+
+    if (Number(secondsLeft > 0) && Number(secondsLeft < 11)) {
+        $('#secondsBreak').text("0" + String(Number(secondsLeft) - 1));
+    }
+
+    if((Number(minutesLeft) > 0) && (Number(secondsLeft) === 0)) {
+        $('#minutesBreak').text(Number(minutesLeft) - 1);
+        $('#secondsBreak').text(59);
+    }
+
+    if((Number(minutesLeft) === 0) && (Number(secondsLeft) === 0)) {
+        var time = $('#breakTime').text();
+        $('#minutesBreak').text(Number(time));
+        $('#secondsBreak').text("00");
+        decreaseSessionTimeInterval = window.setInterval(decreaseSessionTime, 1000);
+        clearInterval(decreaseBreakTimeInterval);
     }
 }
 
